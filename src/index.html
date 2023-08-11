@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somos TechNews</title>
+    <!-- BOOSTRAP CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <!--FAVICON-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/app/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/app/favicon_io//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/src/app/favicon_io//favicon-16x16.png">
+    <link rel="manifest" href="/src/app/favicon_io//site.webmanifest">
+    <!-- Toastify CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./app/design-armando.css">
+
+    <!-- SECCION DEL CAPTCHA-->
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <script>
+        function validarFormulario() {
+            var recaptchaResponse = grecaptcha.getResponse();
+            if (recaptchaResponse === "") {
+                alert("Por favor, selecciona la casilla de reCAPTCHA antes de enviar el formulario.");
+                return false; // Evita que el formulario se envíe
+            }
+            return true; // Permite que el formulario se envíe
+        }
+    </script>
+
+    <!-- TERMINA SECCIÓN DEL CAPTCHA-->
+
+</head>
+
+<body>
+
+    <style>
+        .tamano {
+            margin-top: 30px;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+    </style>
+
+    <!-- SECCION DE LA BARRA DE NAVEGACION-->
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark tamano">
+        <div class="container">
+            <a class="navbar-brand" href="#">TechNews<i class="fa-solid fa-chalkboard-user"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" data-target="inicioIndex" href="#">Inicio<i class="fa-solid fa-house disInic fa-xs" ></i></a>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" data-target="nosotros" href="#">Nosotros <i class="fa-solid fa-users fa-xs disInic"></i></a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="#">Tendencias <i class="fa-solid fa-arrow-trend-up fa-xs disInic"></i></a></li>
+
+                    <li class="nav-item"><a class="nav-link" data-target="kejas" href="#quejas">Buzón de quejas<i class="fa-solid fa-envelope fa-xs disInic"></i></a></li>
+
+                </ul>
+
+                <style>
+                    .disInic {
+                        margin-left: 5px;
+                    }
+                </style>
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <a class="nav-link logged-out" data-target="kejas" href="#" data-bs-toggle="modal" data-bs-target="#signinModal">Iniciar Sesión<i class="fa-solid fa-right-to-bracket fa-xs disInic"></i></a>
+                    <a class="nav-link logged-out" data-target="kejas" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Registrarse<i class="fa-solid fa-address-card fa-xs disInic"></i></a>
+                    <a class="nav-link logged-in" href="#" id="logout">Cerrar Sesión<i class="fa-light fa-person-walking-arrow-right fa-xs disInic"></i></a>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <!-- TERMINA  LA BARRA DE NAVEGACION-->
+
+
+    <!--INICIA SECCIÓN INTRODUCTORIA-->
+
+
+    <section class="inicioSeccion" id="inicioIndex">
+
+        <h3 class="letraInicio">Acerca de...</h3>
+        <p>TechNew es una plataforma de noticias dedicada a informar sobre tecnología e innovación que han ocurrido en los últimos años. Este proyecto tiene una finalidad puramente educativa, sin ánimos de lucro, odio o promoción de temas relacionados con
+            problemas legales. TechNews es simplemente un proyecto escolar, sin intenciones de ser utilizado como propaganda política o para fomentar el odio hacia otras personas. Cabe mencionar que el uso de esta página es responsabilidad exclusiva de
+            quien la utiliza, no del equipo que la desarrolla.</p>
+
+    </section>
+
+
+    <!--LIENA-->
+
+
+    <section class="section-divider" id="inicioIndex">
+        <hr class="linea">
+        <hr class="linea2">
+    </section>
+    <!--TERMINA LINEA-->
+
+
+
+    <!-- TERMINA SECCIÓN INTRODUCTORIA-->
+
+
+    <!--SECCIÓN O CAJA DE NOTICIAS-->
+
+    <section id="inicioIndex" class="espacio">
+
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-md-3 g-3">
+
+                    <div class="col">
+                        <div class="card shadow-sm h-100 d-flex flex-column fondoNoticia">
+                            <img src="/src/app/imagenes/scooter.jpg">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" />
+
+                            <div class="card-body d-flex flex-fill flex-column">
+                                <p>El Scoooter más rápido que podrás comprar, está siendo todo un éxito en tangamandapio</p>
+                                <div class="mt-auto">
+                                    <!-- Agregamos la clase "mt-auto" para que el botón se mueva hacia abajo -->
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">Visitar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Agrega otras dos tarjetas aquí con la misma estructura -->
+                    <!--------------------------------------------------------------->
+
+                    <div class="col">
+                        <div class="card shadow-sm h-100 d-flex flex-column fondoNoticia">
+                            <img src="/src/app/imagenes/tesla.jpg">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" />
+
+                            <div class="card-body d-flex flex-fill flex-column">
+                                <p>Tesla puedo haber mentido sobre el rendimiento de sus vehículos</p>
+                                <div class="mt-auto">
+                                    <!-- Agregamos la clase "mt-auto" para que el botón se mueva hacia abajo -->
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">Visitar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------------------------------------------------------------->
+
+
+
+                    <div class="col">
+                        <div class="card shadow-sm h-100 d-flex flex-column fondoNoticia">
+                            <img src="/src/app/imagenes/iphone-15.jpg">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" />
+
+                            <div class="card-body d-flex flex-fill flex-column">
+                                <p>Esto es todo lo que sabemos del iphone 15</p>
+                                <div class="mt-auto">
+                                    <!-- Agregamos la clase "mt-auto" para que el botón se mueva hacia abajo -->
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">Visitar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="inicioIndex">
+        <hr class="linea3">
+
+    </section>
+
+    <!--TERMINA CAJÓN DE NOTICIAS-->
+
+    <!--INICIA IMAGENES HORIZONTALES CON DESCRIPCION-->
+
+    <section id="inicioIndex">
+        <div class="image-column">
+            <div class="image-item">
+                <img src="/src/app/imagenes/icono-x-twitter.jpg" alt="X-Twitter">
+                <p>El Pendejo de Elon Musk cambia el logo de twitter a una página porno. </p>
+            </div>
+            <div class="image-item">
+                <img src="/src/app/imagenes/OpenAi.png" alt="Imagen 2">
+                <p>¿Sin chamba? Las IA son cada vez más poderosas y eficientes.</p>
+            </div>
+            <div class="image-item">
+                <img src="/src/app/imagenes/threads.jpg" alt="Imagen 3">
+                <p>¿Recuerdas esto? Threads, la app sufre por inactividad de usuarios.</p>
+            </div>
+            <div class="image-item">
+                <img src="/src/app/imagenes/auto.jpeg" alt="Imagen 4">
+                <p>Los autos modernos cada vez son más imposibles de reparar.</p>
+            </div>
+
+        </div>
+
+    </section>
+    <!--TERMINA IMAGNES HORIZONTALES CON DESCRIPCION-->
+
+    <!-- BUZÓN DE QUEJAS-->
+
+    <section id="kejas" class="hidden">
+
+
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <ul class="list-group posts">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="contArm">
+            <form id="myForm">
+                <input class="labelArm" type="text" id="nameInput" placeholder="Titulo" required>
+                <textarea class="labelArm" id="commentInput" placeholder="Comentario"></textarea>
+                <button class="btnArm" id="MyComent">Enviar</button>
+            </form>
+        </div>
+
+    </section>
+
+    <!-- TERMINA BUZÓN DE QUEJAS-->
+
+
+    <!--FOTOGRAFIAS DE INTEGRANTES XDDDD-->
+
+    <section id="nosotros" class="hidden">
+
+        <div class="inicioSeccion">
+            <h3 class="letraInicio">Sobre nosotros</h3>
+            <p>Somos un grupo de alumnos procedente de la universiad tecnologica de Nayarit, cada uno de nosotros se desarolla en áreas especifícas, con la única finalidad de desarrollar una web que ejecute nuestros conocimientos. </p>
+
+        </div>
+
+
+
+        <div class="container marketing fotos">
+
+            <!-- Three columns of text below the carousel -->
+            <div class="row row-cols-md-4">
+                <div class="col">
+                    <img src="/src/app/imagenes/tonto.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice">
+                    <h2 class="fw-normal">Jairo</h2>
+                    <p>Lider de proyecto, encargado del desarollo de equipo.</p>
+                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+                </div>
+                <!-- /.col -->
+                <div class="col">
+                    <img src="/src/app/imagenes/cristian.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice">
+                    <h2 class="fw-normal">Cristian Sotelo</h2>
+                    <p>Desarrollador del sitio, encargado del Front-end.</p>
+                    <p><a class="btn btn-secondary" href="#">Ver más &raquo;</a></p>
+                </div>
+                <!-- /.col -->
+                <div class="col">
+                    <img src="/src/app/imagenes/jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice">
+                    <h2 class="fw-normal">Carlos Enrique</h2>
+                    <p>Diseñador del sitio, encargado del diseño y mockups</p>
+                    <p><a class="btn btn-secondary" href="#">Ver más &raquo;</a></p>
+                </div>
+                <!-- /.col -->
+
+                <!----------------------->
+                <div class="col">
+                    <img src="/src/app/imagenes/yo.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice">
+                    <h2 class="fw-normal">Armando González</h2>
+                    <p>Desarrollador del sitio, encargado del Back-end</p>
+                    <p><a class="btn btn-secondary" href="#">Ver más &raquo;</a></p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="inicioIndex">
+        <hr class="linea3">
+
+    </section>
+    <!--SABER MAS NOTICIAS-->
+
+    <section id="inicioIndex" class="tarjetas">
+        <div class="container marketing">
+            <div class="row row-cols-md-4">
+                <div class="col col-xs-12 col-sm-6 col-md-4">
+                    <h2>Big Data<i class="fa-solid fa-database fa-2xs disInic"></i></h2>
+                    <figure></figure>
+                    <p>
+                        El big data se refiere al manejo y análisis de grandes volúmenes de datos que son demasiado complejos o masivos para ser procesados con herramientas tradicionales. El concepto se basa en la captura, almacenamiento y procesamiento de datos de diversas
+                        fuentes para obtener información valiosa y tomar decisiones basadas en evidencia.
+                    </p>
+                    <a href="https://postgrado.ucsp.edu.pe/articulos/que-es-big-data/#:~:text=El%20big%20data%20(datos%20masivos,o%20procesarlos%20de%20manera%20eficiente." target="_blank" class="btn btn-success my-button">Leer más</a>
+                </div>
+
+                <div class="col col-xs-12 col-sm-6 col-md-4">
+                    <h2>Cloud Computing<i class="fa-solid fa-cloud fa-2xs disInic"></i></h2>
+                    <figure></figure>
+                    <p>
+                        El cloud computing, o computación en la nube, se refiere al acceso y uso de recursos informáticos, como servidores, almacenamiento y aplicaciones, a través de Internet. En lugar de depender de infraestructuras locales, las empresas y usuarios pueden utilizar
+                        servicios en la nube para almacenar, procesar y acceder a sus datos de manera escalable y flexible, sin necesidad de invertir en infraestructura física propia.
+                    </p>
+                    <a href="https://www.salesforce.com/mx/cloud-computing/" target="_blank" class="btn btn-success my-button">Leer más</a>
+                </div>
+                <div class="col col-xs-12 col-sm-6 col-md-4">
+                    <h2>Data Minding <i class="fa-solid fa-file-contract fa-2xs disInic"></i></h2>
+                    <figure></figure>
+                    <p>
+                        El data mining, o minería de datos, es el proceso de descubrir patrones, relaciones y tendencias significativas en grandes conjuntos de datos. Utilizando técnicas de análisis estadístico y aprendizaje automático, el data mining ayuda a extraer información
+                        valiosa y conocimientos ocultos para tomar decisiones informadas y estratégicas.
+                    </p>
+                    <a href="https://www.iebschool.com/blog/data-mining-mineria-datos-big-data/" class="btn btn-success my-button" target="_blank">Leer más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--TERMINA EL SABER MAS NOTICAS-->
+
+    <!--TERMINA FOTOGRAFIA DE INTEGRANTES-->
+
+
+    <!--SECCION DE COMENTARIOS-->
+
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() {
+            var d = document,
+                s = d.createElement('script');
+            s.src = 'https://comentarios-rnrdtbiw31.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            s.setAttribute('data-language', 'es');
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Porfavor activa JavaScrip Pendejito <a href="https://disqus.com/?ref_noscript">Comentarios otorgados por Disqus.</a></noscript>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h3>Iniciar Sesión</h3>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-5">
+
+                    <!--FORMULARIO QUE CONTIENE EL REGISTRIO Y EL CAPTCHA-->
+
+                    <form id="signup-form" onsubmit="validarFormulario(event)">
+
+                        <label for="email">Email:</label>
+                        <input type="text" id="signup-email" class="form-control mb-3" placeholder="Title" required>
+
+                        <label for="password">Password:</label>
+                        <input type="password" id="signup-password" class="form-control mb-3" placeholder="Password" required>
+
+                        <div class="mb-3">
+                            <div class="g-recaptcha" data-sitekey="6LdesSwnAAAAAP5XRxeE3-mMSZRQQyA0iautpt0f" required> </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade " id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalSignin" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="elpepeXDD">Registrarse</h3>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="login-form">
+                        <label for="email">Email</label>
+                        <input type="text" id="login-email" class="form-control mb-3" placeholder="Title" required>
+                        <label for="password">Password:</label>
+                        <input type="password" id="login-password" class="form-control mb-3" placeholder="Password" required>
+
+
+                        <button type="submit" class="btn btn-success w-100 mb-4">Iniciar</button>
+                        <button type="button" class="btn btn-info" id="googleLogin">Continuar con <i class="fa-brands fa-google xd" style="color: #000000;"></i></button>
+                        <button type="button" class="btn btn-primary" id="facebookLogin">Continuar con<i class="fa-brands fa-facebook xd"></i></button>
+                        <button type="button" class="btn btn-dark" id="githubLogin">Continuar con<i class="fa-brands fa-github xd" style="color: #ffffff;"></i></button>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- INICIA FOOTER O PIE DE PÁGINA -->
+
+    <footer>
+
+        <div class="columnaFooter">
+
+            <h3 class="h3Footer">Síguenos <i class="fa-solid fa-thumbs-up fa-sm disInic"></i></h3>
+            <p class="pFooter">Facebook<i class="fa-brands fa-facebook fa-xs disInic"></i></p>
+            <p class="pFooter">X (Twitter)<i class="fa-brands fa-x-twitter fa-xs disInic"></i></p>
+            <p class="pFooter">Tik Tok <i class="fa-brands fa-tiktok fa-xs disInic"></i></p>
+
+        </div>
+
+        <div class="columnaFooter">
+
+            <h3 class="h3Footer">Institución<i class="fa-solid fa-graduation-cap fa-sm disInic"></i></h3>
+            <p class="pFooter">Universidad Tecnólogica de Nayarit</p>
+            <p class="pFooter">Xalisco, Nayarit, México <i class="fa-solid fa-location-dot fa-xs disInic"></i></p>
+            <p class="pFooter">311-211-9800 <i class="fa-solid fa-phone fa-xs disInic"></i></p>
+
+        </div>
+
+        <div class="columnaFooter">
+
+            <h3 class="h3Footer">Integrantes<i class="fa-solid fa-people-group fa-xs disInic"></i></h3>
+            <p class="pFooter">Armando Gonzalez</p>
+            <p class="pFooter">Cristian Sotelo</p>
+            <p class="pFooter">Carlos Enrique</p>
+            <p class="pFooter">Jairo</p>
+
+        </div>
+
+    </footer>
+    <footer class="foot2">
+        <p class="pFoot2">&copy; 2023 Universidad Tecnólogica de Nayarit. Todos los derechos reservados.</p>
+    </footer>
+
+    <!--TERMINA FOOTER -->
+
+
+    <!-- SCRIPTS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://kit.fontawesome.com/8e3115e10a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./app/carga.js"></script>
+    <script src="./main.js" type="module"></script>
+    <script src="./app/signinForm.js"></script>
+    <script src="./comentarios.js"></script>
+
+
+
+
+
+</body>
+
+</html>
